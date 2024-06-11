@@ -1,22 +1,22 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
 const shiftSchema = new mongoose.Schema(
   {
     morning: {
       type: Boolean,
-      required: true,
+      default: false,
     },
     afternoon: {
       type: Boolean,
-      required: true,
+      default: false,
     },
     evening: {
       type: Boolean,
-      required: true,
+      default: false,
     },
     user:{
-        type: user.model.ObjectID,
-        ref: User,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
     }
   },
   { timestamps: true }
