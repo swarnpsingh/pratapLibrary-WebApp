@@ -9,9 +9,11 @@ import Home from "./components/Home"
 import General from "./components/General"
 import Credentials from "./components/Credentials"
 import SeatSellection from "./components/SeatSellection"
+import Admin from './components/Admin';
+import Confirmation from './components/Confirmation';
 
 function App() {
-
+  // /seat-selection/${uniqueId}
   return (
     <>
       <Router>
@@ -20,7 +22,9 @@ function App() {
             <Route path='/' element={<Home />}/>
             <Route path='/info' element={<General />}/>
             <Route path='/credentials/:id' element={<Credentials />}/>
-            <Route path='/seat-sellection/:id' element={<SeatSellection />}/>
+            <Route path='/seats/:id' element={<SeatSellection />}/>
+            <Route path='/confirmation/:id' element={<Confirmation />}/>
+            <Route path='/admin' element={<Admin />}/>
           </Routes>
         </div>
       </Router>

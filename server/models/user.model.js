@@ -1,25 +1,16 @@
-import mongoose from "mongoose";
+// server/models/user.model.js
+import mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-    },
-    phoneNo: {
-      type: Number,
-      required: true,
-    },
-    address: {
-      type: String,
-      required: true,
-    },
-    aadharNo: {
-      type: Number,
-      required: true,
-    },
-  },
-  { timestamps: true }
-);
+const UserSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  address: { type: String, required: true },
+  phone: { type: String, required: true },
+  aadhar: { type: String, required: true },
+  room: { type: Number, required: true },
+  shift: { type: String, required: true },
+  seat: { type: Number, required: true },
+});
 
-export const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', UserSchema);
+
+export default User;
